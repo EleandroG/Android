@@ -2,6 +2,8 @@ package com.example.dialer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,63 +52,71 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void one(View view) {
-
+        onClickButton(buttonOne, input, "1");
     }
 
     public void two(View view) {
-
+        onClickButton(buttonTwo, input, "2");
     }
 
     public void three(View view) {
-
+        onClickButton(buttonThree, input, "3");
     }
 
     public void four(View view) {
-
+        onClickButton(buttonFour, input, "4");
     }
 
     public void five(View view) {
-
+        onClickButton(buttonFive, input, "5");
     }
 
     public void six(View view) {
-
+        onClickButton(buttonSix, input, "6");
     }
 
     public void seven(View view) {
-
+        onClickButton(buttonSeven, input, "7");
     }
 
     public void eight(View view) {
-
+        onClickButton(buttonEight, input, "8");
     }
 
     public void nine(View view) {
-
+        onClickButton(buttonNine, input, "9");
     }
 
     public void star(View view) {
-
+        onClickButton(buttonStar, input, "*");
     }
 
     public void zero(View view) {
-
+        onClickButton(buttonZero, input, "0");
     }
 
     public void hash(View view) {
-
+        onClickButton(buttonHash, input, "#");
     }
 
     public void onDelete(View view) {
-
+        input.setText("");
     }
 
     public void onCall(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
 
+        String hash = input.getText().toString();
+
+        if(hash.contains("$")) {
+            hash.replace("$", "%23");
+        }
+        intent.setData(Uri.parse("tel:" + hash));
+        startActivity(intent);
     }
 
     public void onClickButton(Button button, EditText inputNumber, String number) {         //Um método para usar todos os onClicks ao invés de repetir código e usar um para cada um
         String text = input.getText().toString();                                           //text convertido para string
-        inputNumber.setText(text + number);
+        inputNumber.setText(text + number);                                                 //?
     }
 }
