@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    public static final String EXTRA_MESSAGE = "com.example.android.dialer.extra.MESSAGE";
+    private EditText mMessageEditText;
+    public static final int TEXT_REQUEST = 1;
 
     Button buttonOne;
     Button buttonTwo;
@@ -49,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCall = findViewById(R.id.buttonCall);
 
         input = findViewById(R.id.editText);
+        mMessageEditText = findViewById(R.id.editText);
     }
 
     public void one(View view) {
@@ -118,5 +125,32 @@ public class MainActivity extends AppCompatActivity {
     public void onClickButton(Button button, EditText inputNumber, String number) {         //Um método para usar todos os onClicks ao invés de repetir código e usar um para cada um
         String text = input.getText().toString();                                           //text convertido para string
         inputNumber.setText(text + number);                                                 //?
+    }
+
+    public void launchSecondActivity(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+
+        String message = mMessageEditText.getText().toString();
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    public void launchThirdActivity(View view) {
+        Intent intent = new Intent(this, ThirdActivity.class);
+
+        String message = mMessageEditText.getText().toString();
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    public void launchFourthActivity(View view) {
+        Intent intent = new Intent(this, FourthActivity.class);
+
+        String message = mMessageEditText.getText().toString();
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
     }
 }
