@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(intent, TEXT_REQUEST);
+        
     }
 
     public void launchFourthActivity(View view) {
