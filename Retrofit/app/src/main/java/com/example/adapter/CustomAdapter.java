@@ -20,6 +20,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     private List<RetroPhoto> dataList;
     private Context context;
+    
 
     public CustomAdapter(Context context,List<RetroPhoto> dataList){
         this.context = context;
