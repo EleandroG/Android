@@ -380,6 +380,7 @@ public class MainActivity extends AppCompatActivity {
     private void putImageInStorage(StorageReference storageReference, Uri uri, final String key) {
         storageReference.putFile(uri).addOnCompleteListener(MainActivity.this,
                 new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                         if (task.isSuccessful()) {
