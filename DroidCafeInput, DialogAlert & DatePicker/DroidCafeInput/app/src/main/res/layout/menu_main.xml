@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_contact"
+        android:layout_width="219dp"
+        android:layout_height="156dp"
+        android:orderInCategory="100"
+        android:title="Contact"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_order"
+        android:icon="@drawable/ic_shopping_cart"
+        android:layout_width="219dp"
+        android:layout_height="156dp"
+        android:orderInCategory="10"
+        android:title="Order"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_status"
+        android:icon="drawable/@drawable/ic_status_info"
+        android:layout_width="219dp"
+        android:layout_height="156dp"
+        android:orderInCategory="20"
+        android:title="Status"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_favorites"
+        android:icon="@drawable/ic_favorite"
+        android:layout_width="219dp"
+        android:layout_height="156dp"
+        android:orderInCategory="30"
+        android:title="Favorites"
+        app:showAsAction="ifRoom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
